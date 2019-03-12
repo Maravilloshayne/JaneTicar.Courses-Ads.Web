@@ -1,0 +1,26 @@
+﻿@model JaneTicar.GradeCourses.Web.Areas.Manage.ViewModels.Courses.UpdateTitleViewModel
+@{
+    ViewData["Title"] = "UpdateTitle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UpdateTitle</h2>
+<p>@Model.Description</p>
+
+<div class="row">
+    <div class="hero-unit">
+        <form action="~/manage/courses/update-title" method="post">
+            @Html.ValidationSummary()
+            <input type="hidden" name="CourseId" value="@Model.Id" />
+
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <textarea id="title" name="Title" style="height:300px;width:300px;">@Model.Title</textarea>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="~/manage/courses/Index" class="btn btn-danger">Cancel</a>
+        </form>
+    </div>
+</div>
